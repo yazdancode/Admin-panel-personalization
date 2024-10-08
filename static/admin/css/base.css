@@ -1,7 +1,7 @@
 /*
     DJANGO Admin styles
 */
-
+@import url(fonts.css);
 /* VARIABLE DEFINITIONS */
 html[data-theme="light"],
 :root {
@@ -97,10 +97,11 @@ body {
     margin: 0;
     padding: 0;
     font-size: 0.875rem;
-    font-family: var(--font-family-primary), serif;
+    /*font-family: var(--font-family-primary), serif;*/
     color: var(--body-fg);
     background: var(--body-bg);
     background-color: cornflowerblue;
+    font-family: "IranSans", serif;
 }
 
 /* LINKS */
