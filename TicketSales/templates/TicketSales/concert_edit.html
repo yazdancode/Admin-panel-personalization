@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویرایش کنسرت</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'IRANSans', Tahoma, sans-serif;
+            direction: rtl;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+            color: #555;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="file"], input[type="number"] {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            width: 100%;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input[type="text"]:focus, input[type="file"]:focus, input[type="number"]:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+        .alert {
+            margin-top: 10px;
+        }
+        .bottonborder {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            width: 160px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            button {
+                width: 100%;
+            }
+        }
+        .image-preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .image-preview img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>ویرایش کنسرت</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">نام کنسرت:</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+                <div class="alert alert-danger">
+                    {{ form.name.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.singer_name.id_for_label }}">نام خواننده:</label>
+            {{ form.singer_name }}
+            {% if form.singer_name.errors %}
+                <div class="alert alert-danger">
+                    {{ form.singer_name.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.length.id_for_label }}">مدت زمان:</label>
+            {{ form.length }}
+            {% if form.length.errors %}
+                <div class="alert alert-danger">
+                    {{ form.length.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.Concert_picture.id_for_label }}">عکس کنسرت:</label>
+            {{ form.Concert_picture }}
+            {% if form.Concert_picture.errors %}
+                <div class="alert alert-danger">
+                    {{ form.Concert_picture.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        {% if concert.Concert_picture %}
+            <div class="image-preview">
+                <img src="{{ concert.Concert_picture.url }}" alt="عکس کنسرت">
+            </div>
+        {% endif %}
+
+        <div class="bottonborder">
+            <button type="submit" class="btn btn-success">ذخیره</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
