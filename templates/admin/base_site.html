@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if subtitle %}
+        {{ subtitle }} | 
+    {% endif %}
+    {{ title }} | پنل مدیریت فروش بلیط
+{% endblock %}
+
+{% block branding %}
+    <div id="site-name">
+        <img src="{% static 'admin/img/OIP.jpeg' %}" style="width:50px; height:auto;"  alt=""/>
+        <a href="{% url 'admin:index' %}">فروش بلیط</a>
+    </div>
+    {% if user.is_anonymous %}
+        {% include "admin/color_theme_toggle.html" %}
+    {% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
