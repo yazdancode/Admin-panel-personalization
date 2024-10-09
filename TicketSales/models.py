@@ -273,4 +273,3 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.profilemodel.name} {self.profilemodel.family} (${self.price})"
-

@@ -21,7 +21,7 @@ class TestConcert:
             available_tickets=100,
             ticket_price=Decimal("50.00"),
             description="A great concert event",
-            ticket_status=ConcertStatus.AVAILABLE
+            ticket_status=ConcertStatus.AVAILABLE,
         )
         concert.full_clean()  # This will raise a ValidationError if the data is invalid
         concert.save()
@@ -39,6 +39,6 @@ class TestConcert:
                 available_tickets=100,
                 ticket_price=Decimal("50.00"),
                 description="A great concert event",
-                ticket_status=ConcertStatus.AVAILABLE
+                ticket_status=ConcertStatus.AVAILABLE,
             )
             concert.full_clean()  # This will raise a ValidationError if the data is invalid
