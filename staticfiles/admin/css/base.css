@@ -1,7 +1,7 @@
 /*
     DJANGO Admin styles
 */
-
+@import url(fonts.css);
 /* VARIABLE DEFINITIONS */
 html[data-theme="light"],
 :root {
@@ -97,9 +97,11 @@ body {
     margin: 0;
     padding: 0;
     font-size: 0.875rem;
-    font-family: var(--font-family-primary);
+    /*font-family: var(--font-family-primary), serif;*/
     color: var(--body-fg);
     background: var(--body-bg);
+    background-color: cornflowerblue;
+    font-family: "IranSans", serif;
 }
 
 /* LINKS */
@@ -233,7 +235,7 @@ blockquote {
 }
 
 code, pre {
-    font-family: var(--font-family-monospace);
+    font-family: var(--font-family-monospace), serif;
     color: var(--body-quiet-color);
     font-size: 0.75rem;
     overflow-x: auto;
@@ -477,7 +479,7 @@ input, textarea, select, .form-row p, form .button {
     margin: 2px 0;
     padding: 2px 3px;
     vertical-align: middle;
-    font-family: var(--font-family-primary);
+    font-family: var(--font-family-primary), serif;
     font-weight: normal;
     font-size: 0.8125rem;
 }
@@ -607,7 +609,7 @@ input[type=button][disabled].default {
 .module caption,
 .inline-group h2 {
     font-size: 0.75rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
@@ -796,7 +798,7 @@ a.deletelink:focus, a.deletelink:hover {
     font-weight: 400;
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .object-tools a:focus, .object-tools a:hover {
@@ -870,8 +872,8 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 .skip-to-content-link:focus {
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
 }
 
 #content {
@@ -988,7 +990,7 @@ a.deletelink:focus, a.deletelink:hover {
     background: none;
     border: 0;
     cursor: pointer;
-    font-family: var(--font-family-primary);
+    font-family: var(--font-family-primary), serif;
 }
 
 #user-tools {
@@ -1001,7 +1003,7 @@ a.deletelink:focus, a.deletelink:hover {
     padding: 0;
     font-weight: 300;
     font-size: 0.6875rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
